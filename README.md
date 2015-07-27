@@ -1,6 +1,6 @@
 .editorconfig
 =========
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a `.editorconfig` file.
 
@@ -171,8 +171,8 @@ Copyright &copy; 2015. Athan Reines.
 [travis-image]: http://img.shields.io/travis/kgryte/editorconfig/master.svg
 [travis-url]: https://travis-ci.org/kgryte/editorconfig
 
-[coveralls-image]: https://img.shields.io/coveralls/kgryte/editorconfig/master.svg
-[coveralls-url]: https://coveralls.io/r/kgryte/editorconfig?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/kgryte/editorconfig/master.svg
+[codecov-url]: https://codecov.io/github/kgryte/editorconfig?branch=master
 
 [dependencies-image]: http://img.shields.io/david/kgryte/editorconfig.svg
 [dependencies-url]: https://david-dm.org/kgryte/editorconfig

@@ -220,22 +220,21 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			var fpath1,
 				fpath2,
-				f1, f2,
-				bool;
+				f1, f2;
 
 			if ( error ) {
 				assert.ok( false );
 				return;
 			}
-			bool = fs.existsSync(  );
-
-			assert.isTrue( bool );
-
 			fpath1 = path.join( dirpath, '.editorconfig' );
-			f1 = fs.readFileSync( fpath1 );
+			f1 = fs.readFileSync( fpath1, {
+				'encoding': 'utf8'
+			});
 
 			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), '.editorconfig' );
-			f2 = fs.readFileSync( fpath2 );
+			f2 = fs.readFileSync( fpath2, {
+				'encoding': 'utf8'
+			});
 
 			assert.strictEqual( f1, f2 );
 		}

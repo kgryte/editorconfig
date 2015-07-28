@@ -1,6 +1,6 @@
 {
   "name": "@kgryte/editorconfig",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a .editorconfig file.",
   "author": {
     "name": "Athan Reines",

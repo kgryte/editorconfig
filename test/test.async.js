@@ -231,7 +231,7 @@ describe( 'async', function tests() {
 				'encoding': 'utf8'
 			});
 
-			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), '.editorconfig' );
+			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), 'editorconfig' );
 			f2 = fs.readFileSync( fpath2, {
 				'encoding': 'utf8'
 			});

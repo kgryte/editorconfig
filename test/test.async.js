@@ -158,11 +158,10 @@ describe( 'async', function tests() {
 			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
+				assert.isTrue( bool );
 			}
-			bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
-
-			assert.isTrue( bool );
 			done();
 		}
 	});
@@ -219,6 +218,7 @@ describe( 'async', function tests() {
 
 			if ( error ) {
 				assert.ok( false );
+				done();
 				return;
 			}
 			fpath1 = path.join( dirpath, '.editorconfig' );
@@ -250,6 +250,7 @@ describe( 'async', function tests() {
 			var bool;
 			if ( error ) {
 				assert.ok( false );
+				done();
 				return;
 			}
 			bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );

@@ -3,19 +3,10 @@
 
 // MODULES //
 
-var // Expectation library:
-	chai = require( 'chai' ),
-
-	// Recursively make directories:
+var chai = require( 'chai' ),
 	mkdirp = require( 'mkdirp' ),
-
-	// Path module:
 	path = require( 'path' ),
-
-	// Filesystem module:
 	fs = require( 'fs' ),
-
-	// Module to be tested:
 	cp = require( './../lib/async.js' );
 
 
@@ -155,7 +146,7 @@ describe( 'async', function tests() {
 		}
 	});
 
-	it( 'should create a .editorconfig file in a specified directory', function test() {
+	it( 'should create a .editorconfig file in a specified directory', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -164,17 +155,19 @@ describe( 'async', function tests() {
 		cp( dirpath, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
 				return;
 			}
-			var bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
+			bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
 
 			assert.isTrue( bool );
+			done();
 		}
 	});
 
-	it( 'should pass any write errors to a provided callback', function test() {
+	it( 'should pass any write errors to a provided callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -184,13 +177,14 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			if ( error ) {
 				assert.ok( true );
-				return;
+			} else {
+				assert.ok( false );
 			}
-			assert.ok( false );
+			done();
 		}
 	});
 
-	it( 'should create a .editorconfig file in a specified directory without requiring a callback', function test() {
+	it( 'should create a .editorconfig file in a specified directory without requiring a callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -204,10 +198,11 @@ describe( 'async', function tests() {
 			var bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
 
 			assert.isTrue( bool );
+			done();
 		}
 	});
 
-	it( 'should create a .editorconfig file using a specified template', function test() {
+	it( 'should create a .editorconfig file using a specified template', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -237,10 +232,11 @@ describe( 'async', function tests() {
 			});
 
 			assert.strictEqual( f1, f2 );
+			done();
 		}
 	});
 
-	it( 'should ignore any unrecognized options', function test() {
+	it( 'should ignore any unrecognized options', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -251,13 +247,15 @@ describe( 'async', function tests() {
 		}, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
 				return;
 			}
-			var bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
+			bool = fs.existsSync( path.join( dirpath, '.editorconfig' ) );
 
 			assert.isTrue( bool );
+			done();
 		}
 	});
 

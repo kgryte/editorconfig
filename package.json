@@ -18,7 +18,7 @@
   "scripts": {
     "test": "mocha",
     "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
-    "codecov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
   },
   "main": "./lib",
   "repository": {
@@ -39,7 +39,6 @@
   "dependencies": {
     "@kgryte/noop": "^1.0.0",
     "minimist": "^1.1.2",
-    "pkginfo": "^0.3.0",
     "update-notifier": "^0.6.0",
     "validate.io-contains": "^1.0.0",
     "validate.io-function": "^1.0.2",
@@ -48,7 +47,7 @@
   },
   "devDependencies": {
     "chai": "3.x.x",
-    "codecov.io": "^0.1.5",
+    "codecov": "1.x.x",
     "istanbul": "^0.4.1",
     "jshint": "2.x.x",
     "jshint-stylish": "2.x.x",

@@ -1,6 +1,6 @@
 .editorconfig
 =========
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a `.editorconfig` file.
 
@@ -45,7 +45,6 @@ cp( 'path/to/a/directory', {
 ```
 
 
-
 #### cp.sync( dest[, opts] )
 
 Synchronously create a `.editorconfig` file in a specified `destination` directory.
@@ -59,21 +58,21 @@ The function accepts the same `options` as the asynchronous version.
 
 ## Notes
 
-* 	Supported templates may be found in the `./lib` directory and are named according to the directory name.
+* 	Supported templates may be found in the `./templates` directory and are named according to the directory name.
 
 
 ## Examples
 
 ``` javascript
-var mkdirp = require( 'mkdirp' ),
-	path = require( 'path' ),
-	cp = require( '@kgryte/editorconfig' );
+var mkdirp = require( 'mkdirp' );
+var path = require( 'path' );
+var cp = require( '@kgryte/editorconfig' );
 
 var dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
 
 mkdirp.sync( dirpath );
 cp.sync( dirpath, {
-	'template': 'default'
+    'template': 'default'
 });
 ```
 
@@ -130,7 +129,7 @@ $ editorconfig ./../some/other/directory
 
 ### Unit
 
-Unit tests use the [Mocha](http://mochajs.org/) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha][mocha] test framework with [Chai][chai] assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -141,7 +140,7 @@ All new feature development should have corresponding unit tests to validate cor
 
 ### Test Coverage
 
-This repository uses [Istanbul](https://github.com/gotwarlost/istanbul) as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
+This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test-cov
@@ -162,17 +161,17 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. Athan Reines.
+Copyright &copy; 2015-2016. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/@kgryte/editorconfig.svg
 [npm-url]: https://npmjs.org/package/@kgryte/editorconfig
 
-[travis-image]: http://img.shields.io/travis/kgryte/editorconfig/master.svg
-[travis-url]: https://travis-ci.org/kgryte/editorconfig
+[build-image]: http://img.shields.io/travis/kgryte/editorconfig/master.svg
+[build-url]: https://travis-ci.org/kgryte/editorconfig
 
-[codecov-image]: https://img.shields.io/codecov/c/github/kgryte/editorconfig/master.svg
-[codecov-url]: https://codecov.io/github/kgryte/editorconfig?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/kgryte/editorconfig/master.svg
+[coverage-url]: https://codecov.io/github/kgryte/editorconfig?branch=master
 
 [dependencies-image]: http://img.shields.io/david/kgryte/editorconfig.svg
 [dependencies-url]: https://david-dm.org/kgryte/editorconfig
@@ -182,3 +181,7 @@ Copyright &copy; 2015. Athan Reines.
 
 [github-issues-image]: http://img.shields.io/github/issues/kgryte/editorconfig.svg
 [github-issues-url]: https://github.com/kgryte/editorconfig/issues
+
+[mocha]: http://mochajs.org/
+[chai]: http://chaijs.com
+[istanbul]: https://github.com/gotwarlost/istanbul

@@ -3,14 +3,14 @@
 
 // MODULES //
 
-var chai = require( 'chai' ),
-	templates = require( './../lib/templates.js' );
+var chai = require( 'chai' );
+var templates = require( './../lib/templates.js' );
 
 
 // VARIABLES //
 
-var expect = chai.expect,
-	assert = chai.assert;
+var expect = chai.expect;
+var assert = chai.assert;
 
 
 // TESTS //

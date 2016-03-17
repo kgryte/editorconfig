@@ -3,17 +3,17 @@
 
 // MODULES //
 
-var chai = require( 'chai' ),
-	mkdirp = require( 'mkdirp' ),
-	path = require( 'path' ),
-	fs = require( 'fs' ),
-	cp = require( './../lib/sync.js' );
+var chai = require( 'chai' );
+var mkdirp = require( 'mkdirp' );
+var path = require( 'path' );
+var fs = require( 'fs' );
+var cp = require( './../lib/sync.js' );
 
 
 // VARIABLES //
 
-var expect = chai.expect,
-	assert = chai.assert;
+var expect = chai.expect;
+var assert = chai.assert;
 
 
 // TESTS //
@@ -112,8 +112,8 @@ describe( 'sync', function tests() {
 	});
 
 	it( 'should create a .editorconfig file in a specified directory', function test() {
-		var dirpath,
-			bool;
+		var dirpath;
+		var bool;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
 
@@ -126,8 +126,8 @@ describe( 'sync', function tests() {
 	});
 
 	it( 'should create a .editorconfig file using a specified template', function test() {
-		var dirpath,
-			bool;
+		var dirpath;
+		var bool;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
 
@@ -142,8 +142,8 @@ describe( 'sync', function tests() {
 	});
 
 	it( 'should ignore any unrecognized options', function test() {
-		var dirpath,
-			bool;
+		var dirpath;
+		var bool;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
 

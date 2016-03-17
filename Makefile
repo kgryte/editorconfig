@@ -18,10 +18,11 @@ endif
 NOTES ?= 'TODO|FIXME|WARNING|HACK|NOTE'
 
 
-# TAPE #
+# MOCHA #
 
-TAPE ?= ./node_modules/.bin/tape
-TAP_REPORTER ?=  ./node_modules/.bin/tap-spec
+MOCHA ?= ./node_modules/.bin/mocha
+_MOCHA ?= ./node_modules/.bin/_mocha
+MOCHA_REPORTER ?= spec
 
 
 # ISTANBUL #
@@ -84,33 +85,34 @@ notes:
 
 # UNIT TESTS #
 
-.PHONY: test test-tape
+.PHONY: test test-mocha
 
-test: test-tape
+test: test-mocha
 
-test-tape: node_modules
+test-mocha: node_modules
 	NODE_ENV=$(NODE_ENV) \
 	NODE_PATH=$(NODE_PATH_TEST) \
-	$(TAPE) \
-		"$(TESTS)" \
-	| $(TAP_REPORTER)
+	$(MOCHA) \
+		--reporter $(MOCHA_REPORTER) \
+		$(TESTS)
 
 
 
 # CODE COVERAGE #
 
-.PHONY: test-cov test-istanbul-tape
+.PHONY: test-cov test-istanbul-mocha
 
-test-cov: test-istanbul-tape
+test-cov: test-istanbul-mocha
 
-test-istanbul-tape: node_modules
+test-istanbul-mocha: node_modules
 	NODE_ENV=$(NODE_ENV) \
 	NODE_PATH=$(NODE_PATH_TEST) \
 	$(ISTANBUL) cover \
 		--dir $(ISTANBUL_OUT) \
 		--report $(ISTANBUL_REPORT) \
-	$(TAPE) -- \
-		"$(TESTS)"
+	$(_MOCHA) -- \
+		--reporter $(MOCHA_REPORTER) \
+		$(TESTS)
 
 
 

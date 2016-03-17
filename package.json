@@ -40,6 +40,7 @@
     "@kgryte/noop": "^1.0.0",
     "minimist": "^1.1.2",
     "update-notifier": "^0.6.0",
+    "utils-cwd": "^2.0.0",
     "validate.io-contains": "^1.0.0",
     "validate.io-function": "^1.0.2",
     "validate.io-object": "^1.0.4",

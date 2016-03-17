@@ -105,7 +105,7 @@ Options:
   -h,    --help                Print this message.
   -V,    --version             Print the package version.
          --templates           List templates.
-  -tmpl, --template [name]     Template name. Default: 'default'.
+  -tmpl, --template name       Template name. Default: 'default'.
 ```
 
 

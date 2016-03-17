@@ -65,7 +65,7 @@ if ( args.version ) {
 // TEMPLATES //
 
 if ( args.templates ) {
-	console.log( templates.join( '\n' )+'\n' );
+	console.log( templates.join( '\n' ) );
 	return;
 }
 
